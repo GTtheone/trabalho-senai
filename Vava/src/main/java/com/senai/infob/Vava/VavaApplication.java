@@ -1,4 +1,4 @@
-package com.senai.infob.Vava;
+package com.senai.infob.vava;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 
-
 import com.senai.infob.vava.models.Usuario;
 import com.senai.infob.vava.repositories.UsuarioRepository;
 
@@ -29,5 +28,19 @@ public class UsuarioService {
         }
         return "Falha ao realizar login";
     }
+
+    public Usuario buscar(Integer id) {
+        return usuarioRepository.findById(id).get();
+    }
+
+    public Usuario atualizar(Integer id, Usuario usuarioAtualizado) {
+        Usuario e = buscar(id);
+        if (e != null){
+            usuarioAtualizado.setId(id);
+            return usuarioRepository.save(usuarioAtualizado);
+            
+    }
+    return null;
+}
 
 }
